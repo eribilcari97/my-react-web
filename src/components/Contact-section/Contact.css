@@ -1,0 +1,313 @@
+/* CONTACT CSS------------- */
+.cyber-frame {
+  position: relative;
+  padding: 4px;
+  background: linear-gradient(
+    45deg, 
+    #000 40%, 
+    #0ff 50%, 
+    #000 60%
+  );
+  border-radius: 12px;
+  animation: borderGlow 2s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+
+
+.contact-grid {
+  position: relative;
+  max-width: 600px;
+  padding: 30px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#access-contact{
+  color:rgb(209, 8, 8)
+}
+
+.hex-grid {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background:
+    repeating-linear-gradient(
+      60deg,
+      rgba(0, 255, 255, 0.05) 0 20px,
+      transparent 20px 40px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      rgba(0, 255, 255, 0.05) 0 20px,
+      transparent 20px 40px
+    );
+  animation: gridPulse 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.1; }
+}
+
+.contact-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+  z-index: 1;
+}
+
+
+.contact-header h1 {
+  color: #0ff;
+  font-size: 2em;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  margin-bottom: 15px;
+  letter-spacing: 4px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #0ff, transparent);
+  filter: drop-shadow(0 0 10px #0ff);
+}
+
+.input-grid {
+  display: grid;
+  grid-gap: 20px; 
+  position: relative;
+  z-index: 1;
+}
+
+.input-row {
+  position: relative;
+}
+
+.input-row input,
+.input-row textarea {
+  width: 100%;
+  padding: 15px; 
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #0ff;
+  color: #0ff;
+  font-size: 1em; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 97% 100%, 3% 100%, 0 80%);
+}
+
+.input-row input:focus,
+.input-row textarea:focus {
+  outline: none;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+.input-row label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: #0ff;
+  font-size: 0.8em;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.input-row input:focus ~ label,
+.input-row input:valid ~ label,
+.input-row textarea:focus ~ label,
+.input-row textarea:valid ~ label {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.submit-btn {
+  background: #000;
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 15px 30px; 
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  margin-top: 10px; 
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(0, 255, 255, 0.2), 
+    transparent);
+  transform: translateX(-100%) rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.submit-btn:hover {
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+  letter-spacing: 5px;
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.submit-btn:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+.neon-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,255,255,0.2) 0%, transparent 70%);
+  animation: pulse 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { opacity: 0.4; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.data-stream {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 255, 255, 0.1) 3px,
+    rgba(0, 255, 255, 0.1) 5px
+  );
+  animation: stream 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes stream {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+
+/*MEDIA--------------------*/
+@media (max-width: 1024px) {
+  .cyber-frame {
+      padding: 3px;
+      border-radius: 10px;
+  }
+
+  .contact-grid {
+      max-width: 500px;
+      padding: 25px;
+  }
+
+  .contact-header h1 {
+      font-size: 1.8em;
+  }
+
+  .input-grid {
+      grid-gap: 15px;
+  }
+
+  .input-row input,
+  .input-row textarea {
+      padding: 12px;
+      font-size: 0.9em;
+  }
+
+  .submit-btn {
+      padding: 12px 25px;
+      font-size: 1em;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cyber-frame {
+      padding: 2px;
+      border-radius: 8px;
+  }
+
+  .contact-grid {
+      max-width: 90%;
+      padding: 20px;
+  }
+
+  .contact-header h1 {
+      font-size: 1.5em;
+      letter-spacing: 3px;
+  }
+
+  .input-grid {
+      grid-gap: 12px;
+  }
+
+  .input-row input,
+  .input-row textarea {
+      padding: 10px;
+      font-size: 0.85em;
+  }
+
+  .submit-btn {
+      padding: 10px 20px;
+      font-size: 0.9em;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .cyber-frame {
+      padding: 1px;
+      border-radius: 6px;
+  }
+
+  .contact-grid {
+      max-width: 95%;
+      padding: 15px;
+  }
+
+  .contact-header h1 {
+      font-size: 1.2em;
+      letter-spacing: 2px;
+  }
+
+  .input-grid {
+      grid-gap: 10px;
+  }
+
+  .input-row input,
+  .input-row textarea {
+      padding: 8px;
+      font-size: 0.8em;
+  }
+
+  .submit-btn {
+      padding: 8px 18px;
+      font-size: 0.8em;
+  }
+}

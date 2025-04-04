@@ -1,0 +1,193 @@
+/*cARD CSS------------*/
+:root {
+  --neon-cyan: #00f7ff;
+  --neon-purple: #bc13fe;
+  --dark-bg: #000a1a;
+  --grid-color: rgba(8, 67, 72, 0.1);
+}
+
+
+
+.tron-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.card-container {
+  perspective: 1000px;
+  position: relative;
+  padding-right:30px;
+  padding-top:40px;
+}
+
+.neon-card {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+ 
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 40px rgba(0, 247, 255, 0.2);
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hologram-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,
+      transparent 40%,
+      rgba(188, 19, 254, 0.1) 50%,
+      transparent 60%
+  );
+  animation: hologram 3s linear infinite;
+}
+
+.cyber-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%) contrast(120%);
+  transition: all 0.8s ease;
+}
+
+.data-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+}
+
+.cyber-title {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 15px var(--neon-cyan);
+  font-size: 2em;
+  margin-bottom: 20px;
+  position: relative;
+  animation: title-glitch 5s infinite;
+}
+
+.info-stream {
+  position: relative;
+  z-index: 2;
+}
+
+.data-line {
+  color: white;
+  font-size: 1.1em;
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(0, 247, 255, 0.05);
+  border-left: 3px solid var(--neon-purple);
+  transition: all 0.3s ease;
+}
+
+.glow {
+  color: var(--neon-purple);
+  text-shadow: 0 0 10px var(--neon-purple);
+}
+
+.energy-core {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, 
+      var(--neon-cyan) 10%,
+      rgba(0, 247, 255, 0.2) 70%,
+      transparent 100%
+  );
+  filter: blur(50px);
+  opacity: 0.3;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes hologram {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(10%); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes title-glitch {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(2px); }
+}
+
+.neon-card:hover {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.neon-card:hover .cyber-image {
+  filter: grayscale(100%) brightness(0.5);
+}
+
+.data-line:hover {
+  background: rgba(188, 19, 254, 0.1);
+  transform: translateX(10px);
+}
+
+
+
+.card-container:hover .neon-card {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.card-container:hover .cyber-image {
+  filter: grayscale(100%) brightness(0.5);
+}
+
+.data-line:hover {
+  background: rgba(188, 19, 254, 0.1);
+  transform: translateX(10px);
+}
+
+
+@media (max-width: 768px) {
+  .card-container {
+    display: none;
+  }
+}

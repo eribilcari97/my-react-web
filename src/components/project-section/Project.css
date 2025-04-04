@@ -1,0 +1,355 @@
+/* CyberTerminal.css */
+.cyber-terminal {
+    background: #000;
+    padding: 2rem;
+    border: 3px solid #0ff;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    position: relative;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.terminal-header {
+    position: relative;
+    padding: 1rem;
+    border-bottom: 2px solid #0ff;
+    margin-bottom: 2rem;
+}
+
+.scan-line {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #0ff, transparent);
+    animation: scan 3s linear infinite;
+}
+
+
+.glitch-cyber {
+    color: #0ff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px #0ff;
+    position: relative;
+}
+
+.glitch-cyber::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -2px 0 #f00;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch2 {
+    0% { clip: rect(32px, 9999px, 28px, 0); }
+    5% { clip: rect(13px, 9999px, 80px, 0); }
+    10% { clip: rect(40px, 9999px, 29px, 0); }
+    15% { clip: rect(87px, 9999px, 53px, 0); }
+    20% { clip: rect(64px, 9999px, 45px, 0); }
+    25% { clip: rect(37px, 9999px, 15px, 0); }
+    30% { clip: rect(75px, 9999px, 99px, 0); }
+    35% { clip: rect(64px, 9999px, 20px, 0); }
+    40% { clip: rect(33px, 9999px, 73px, 0); }
+    45% { clip: rect(20px, 9999px, 20px, 0); }
+    50% { clip: rect(78px, 9999px, 55px, 0); }
+    55% { clip: rect(67px, 9999px, 85px, 0); }
+    60% { clip: rect(52px, 9999px, 49px, 0); }
+    65% { clip: rect(22px, 9999px, 39px, 0); }
+    70% { clip: rect(12px, 9999px, 56px, 0); }
+    75% { clip: rect(89px, 9999px, 23px, 0); }
+    80% { clip: rect(44px, 9999px, 78px, 0); }
+    85% { clip: rect(5px, 9999px, 14px, 0); }
+    90% { clip: rect(66px, 9999px, 43px, 0); }
+    95% { clip: rect(95px, 9999px, 9px, 0); }
+    100% { clip: rect(83px, 9999px, 99px, 0); }
+}
+
+.terminal-subheader {
+    display: flex;
+    justify-content: space-between;
+    color: #0ff;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.code-card {
+    background: rgba(0, 30, 30, 0.9);
+    border: 2px solid #0ff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.code-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(0, 255, 255, 0.1);
+    border-bottom: 1px solid #0ff;
+}
+
+.file-type {
+    color: rgb(228, 232, 4);
+    text-shadow: 0 0 10px rgb(55, 255, 0);
+}
+
+.project-id {
+    color: #0ff;
+    opacity: 0.7;
+}
+
+.card-body {
+    padding: 1.5rem;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.ascii-art {
+    color: #0ff;
+    font-family: monospace;
+    line-height: 1.4;
+}
+
+.project-meta {
+    color: #0ff;
+    font-size: 0.9rem;
+}
+
+.code-line {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #0ff;
+}
+
+.cyber-button {
+    background: transparent;
+    border: 1px solid #0ff;
+    color: #0ff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cyber-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 15px #0ff;
+}
+
+.prompt {
+    margin-right: 0.5rem;
+    color: #0f0;
+}
+
+.status-led {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgb(192, 217, 5);
+    box-shadow: 0 0 10px rgb(69, 146, 5);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA------ */
+@media (max-width: 1024px) {
+    .cyber-terminal {
+        padding: 1rem;
+        border-width: 1.5px;
+    }
+
+    .glitch-cyber {
+        font-size: 1.8rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .code-card {
+        padding: 0.6rem;
+        border-width: 1.2px;
+    }
+
+    .card-body {
+        grid-template-columns: 1fr;
+        padding: 0.6rem;
+        min-height: 100px;
+    }
+
+    .ascii-art {
+        font-size: 0.75rem;
+        line-height: 1.1;
+    }
+
+    .cyber-button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .status-led {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cyber-terminal {
+        padding: 0.8rem;
+        border-width: 1px;
+    }
+
+    .glitch-cyber {
+        font-size: 1.2rem;
+    }
+
+    .terminal-header {
+        padding: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .code-card {
+        padding: 0.4rem;
+        border-width: 0.8px;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        min-height: 80px;
+    }
+
+    .ascii-art {
+        font-size: 0.65rem;
+    }
+
+    .cyber-button {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .status-led {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .cyber-terminal {
+        padding: 0.5rem;
+        border:none;
+       
+    }
+
+    .glitch-cyber {
+        font-size: 1rem;
+    }
+
+    .project-grid {
+        gap: 0.3rem;
+    }
+
+    .code-card {
+        padding: 0.2rem;
+    }
+
+    .card-body {
+        padding: 0.3rem;
+        min-height: 60px;
+    }
+
+    .ascii-art {
+        font-size: 0.5rem;
+        line-height: 1;
+    }
+
+    .cyber-button {
+        font-size: 0.55rem;
+        padding: 0.1rem 0.3rem;
+    }
+
+    .status-led {
+        width: 5px;
+        height: 5px;
+    }
+}

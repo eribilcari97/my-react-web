@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: 'Tron-p', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Tron-p', sans-serif;
+}
